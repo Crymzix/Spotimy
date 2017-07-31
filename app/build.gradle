@@ -35,7 +35,10 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:customtabs:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile "com.android.support:support-core-utils:25.3.1"
+    compile 'com.android.support:recyclerview-v7:25.3.1'
     testCompile 'junit:junit:4.12'
     compile "android.arch.lifecycle:runtime:1.0.0-alpha5"
     compile "android.arch.lifecycle:extensions:1.0.0-alpha5"
@@ -51,9 +54,14 @@ dependencies {
     compile "io.reactivex.rxjava2:rxjava:2.1.2"
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.3.0'
     compile 'com.github.bumptech.glide:glide:4.0.0-RC1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC1'
     compile 'com.jakewharton.rxrelay2:rxrelay:2.0.0'
     compile 'com.spotify.sdk:spotify-player-24-noconnect-2.20b@aar'
     compile 'com.spotify.android:auth:1.0.0-alpha'
+    compile 'com.google.firebase:firebase-database:11.0.2'
 }
+
+apply plugin: 'com.google.gms.google-services'
+
