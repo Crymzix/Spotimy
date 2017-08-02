@@ -15,4 +15,12 @@ public class ExternalUrl {
     public void setUrl(String spotify) {
         this.spotify = spotify;
     }
+
+    public String getSpotify() {
+        return spotify;
+    }
+
+    public void setSpotify(String spotify) {
+        this.spotify = spotify;
+    }
 }

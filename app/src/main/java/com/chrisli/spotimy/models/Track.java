@@ -8,7 +8,6 @@ import java.util.List;
 /**
  * Created by Chris Li on 2017-07-31.
  */
-
 public class Track {
 
     private Album album;

@@ -7,6 +7,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.chrisli.spotimy.MainApplication;
+import com.chrisli.spotimy.injection.components.ActivityComponent;
+import com.chrisli.spotimy.injection.components.ApplicationComponent;
+import com.chrisli.spotimy.injection.components.DaggerFragmentComponent;
+import com.chrisli.spotimy.injection.components.FragmentComponent;
+
 import butterknife.ButterKnife;
 
 /**
@@ -15,6 +21,22 @@ import butterknife.ButterKnife;
 
 public abstract class BaseFragment extends Fragment {
 
+    protected final String TAG = this.getClass().getSimpleName();
+
+    protected FragmentComponent mComponent;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        injection();
+    }
+
+    private void injection() {
+        ApplicationComponent applicationComponent = ((MainApplication) getActivity().getApplication()).getApplicationComponent();
+        mComponent = DaggerFragmentComponent.builder()
+                .applicationComponent(applicationComponent)
+                .build();
+    }
 
     @Nullable
     @Override
@@ -22,6 +44,10 @@ public abstract class BaseFragment extends Fragment {
         View view = inflater.inflate(getLayoutId(), container, false);
         ButterKnife.bind(this, view);
         return view;
+    }
+
+    protected FragmentComponent getFragmentComponent() {
+        return mComponent;
     }
 
     protected abstract int getLayoutId();
