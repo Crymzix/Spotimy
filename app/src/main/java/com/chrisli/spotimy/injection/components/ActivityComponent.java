@@ -1,7 +1,7 @@
 package com.chrisli.spotimy.injection.components;
 
-import com.chrisli.spotimy.ui.activities.ActivityScoped;
 import com.chrisli.spotimy.ui.activities.LoginActivity;
+import com.chrisli.spotimy.ui.activities.base.ActivityScoped;
 
 import dagger.Component;
 

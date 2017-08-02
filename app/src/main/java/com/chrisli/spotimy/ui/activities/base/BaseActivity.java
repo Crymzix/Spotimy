@@ -1,5 +1,7 @@
-package com.chrisli.spotimy.ui.activities;
+package com.chrisli.spotimy.ui.activities.base;
 
+import android.arch.lifecycle.LifecycleRegistry;
+import android.arch.lifecycle.LifecycleRegistryOwner;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -15,9 +17,11 @@ import butterknife.ButterKnife;
  * Created by Chris Li on 2017-07-27.
  */
 
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity implements LifecycleRegistryOwner {
 
     protected final String TAG = this.getClass().getSimpleName();
+
+    private final LifecycleRegistry mLifecycleRegistry = new LifecycleRegistry(this);
 
     protected ActivityComponent mComponent;
 
@@ -40,5 +44,10 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     protected ActivityComponent getActivityComponent() {
         return mComponent;
+    }
+
+    @Override
+    public LifecycleRegistry getLifecycle() {
+        return mLifecycleRegistry;
     }
 }

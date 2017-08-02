@@ -2,7 +2,7 @@ package com.chrisli.spotimy;
 
 import android.os.Bundle;
 
-import com.chrisli.spotimy.ui.activities.BaseActivity;
+import com.chrisli.spotimy.ui.activities.base.BaseActivity;
 
 public class MainActivity extends BaseActivity {
 

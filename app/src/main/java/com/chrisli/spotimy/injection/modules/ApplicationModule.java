@@ -2,7 +2,6 @@ package com.chrisli.spotimy.injection.modules;
 
 import android.content.Context;
 
-import com.chrisli.spotimy.data.SpotifyRepository;
 import com.chrisli.spotimy.events.EventBus;
 import com.chrisli.spotimy.managers.PreferenceManager;
 import com.chrisli.spotimy.managers.UserManager;
@@ -20,9 +19,11 @@ import dagger.Provides;
 public class ApplicationModule {
 
     private final Context mContext;
+    private final PreferenceManager mPreferenceManager;
 
     public ApplicationModule(Context context) {
         mContext = context;
+        mPreferenceManager = new PreferenceManager(context);
     }
 
     @Provides
@@ -39,13 +40,13 @@ public class ApplicationModule {
     @Singleton
     @Provides
     UserManager provideUserManager() {
-        return new UserManager();
+        return new UserManager(mPreferenceManager);
     }
 
     @Singleton
     @Provides
     PreferenceManager providePreferenceManager() {
-        return new PreferenceManager();
+        return mPreferenceManager;
     }
 
 }

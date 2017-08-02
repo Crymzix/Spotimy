@@ -1,9 +1,6 @@
 package com.chrisli.spotimy.events;
 
-import android.util.Log;
-
 import com.jakewharton.rxrelay2.BehaviorRelay;
-
 
 import javax.inject.Inject;
 import javax.inject.Singleton;

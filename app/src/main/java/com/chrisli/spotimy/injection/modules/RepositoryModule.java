@@ -5,6 +5,7 @@ import com.chrisli.spotimy.data.local.Local;
 import com.chrisli.spotimy.data.local.SpotifyLocalDataSource;
 import com.chrisli.spotimy.data.remote.Remote;
 import com.chrisli.spotimy.data.remote.SpotifyRemoteDataSource;
+import com.chrisli.spotimy.managers.UserManager;
 
 import javax.inject.Singleton;
 
@@ -27,7 +28,7 @@ public class RepositoryModule {
     @Singleton
     @Provides
     @Remote
-    SpotifyDataSource provideSpotifyRemoteDataSource() {
-        return new SpotifyRemoteDataSource();
+    SpotifyDataSource provideSpotifyRemoteDataSource(UserManager userManager) {
+        return new SpotifyRemoteDataSource(userManager);
     }
 }

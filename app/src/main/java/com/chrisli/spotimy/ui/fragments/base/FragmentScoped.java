@@ -1,4 +1,4 @@
-package com.chrisli.spotimy.ui.fragments;
+package com.chrisli.spotimy.ui.fragments.base;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;

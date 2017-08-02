@@ -1,4 +1,4 @@
-package com.chrisli.spotimy.ui.activities;
+package com.chrisli.spotimy.ui.activities.base;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
