@@ -1,5 +1,6 @@
 package com.chrisli.spotimy.injection.components;
 
+import com.chrisli.spotimy.ui.fragments.base.BaseFragment;
 import com.chrisli.spotimy.ui.fragments.base.FragmentScoped;
 
 import dagger.Component;

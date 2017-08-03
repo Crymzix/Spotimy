@@ -10,6 +10,8 @@ import com.chrisli.spotimy.managers.PreferenceManager;
 import com.chrisli.spotimy.managers.UserManager;
 import com.chrisli.spotimy.ui.views.BaseView;
 
+import io.reactivex.annotations.NonNull;
+
 /**
  * Created by Chris Li on 2017-07-27.
  */
@@ -30,7 +32,7 @@ public abstract class BasePresenter<V extends BaseView> implements LifecycleObse
         this.mPreferenceManager = preferenceManager;
     }
 
-    public void setView(V view) {
+    public void setView(@NonNull V view) {
         this.mView = view;
         if (mView instanceof LifecycleOwner) {
             ((LifecycleOwner) mView).getLifecycle().addObserver(this);

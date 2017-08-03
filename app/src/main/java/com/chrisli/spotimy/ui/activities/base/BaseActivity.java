@@ -28,8 +28,10 @@ public abstract class BaseActivity extends AppCompatActivity implements Lifecycl
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getLayoutId());
-        ButterKnife.bind(this);
+        if (getLayoutId() != 0) {
+            setContentView(getLayoutId());
+            ButterKnife.bind(this);
+        }
         injection();
     }
 

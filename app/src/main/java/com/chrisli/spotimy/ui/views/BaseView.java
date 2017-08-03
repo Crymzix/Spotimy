@@ -5,4 +5,5 @@ package com.chrisli.spotimy.ui.views;
  */
 
 public interface BaseView {
+
 }
