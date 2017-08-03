@@ -4,6 +4,7 @@ import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.LifecycleObserver;
 import android.arch.lifecycle.LifecycleOwner;
 import android.arch.lifecycle.OnLifecycleEvent;
+import android.util.Log;
 
 import com.chrisli.spotimy.events.EventBus;
 import com.chrisli.spotimy.managers.PreferenceManager;
@@ -41,12 +42,10 @@ public abstract class BasePresenter<V extends BaseView> implements LifecycleObse
 
     @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
     protected void onAttach() {
-
     }
 
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     protected void onDetach() {
-
     }
 
 }

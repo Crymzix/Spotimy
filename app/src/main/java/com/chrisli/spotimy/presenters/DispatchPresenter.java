@@ -21,8 +21,8 @@ public class DispatchPresenter extends BasePresenter<DispatchView> {
     }
 
     @Override
-    public void setView(@NonNull DispatchView view) {
-        super.setView(view);
+    protected void onAttach() {
+        super.onAttach();
         if (mUserManager.getSpotifyAccessToken() == null) {
             mView.navigateToLoginActivity();
         } else {

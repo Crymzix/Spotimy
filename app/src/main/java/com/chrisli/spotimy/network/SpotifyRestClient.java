@@ -21,7 +21,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class SpotifyRestClient {
 
-    public static final String SPOTIFY_WEB_API_ENDPOINT = "https://api.spotify.com/v1";
+    public static final String SPOTIFY_WEB_API_ENDPOINT = "https://api.spotify.com/";
 
     private String mAccessToken = null;
 

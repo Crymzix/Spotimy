@@ -1,6 +1,6 @@
 package com.chrisli.spotimy;
 
-import android.app.Application;
+import android.support.multidex.MultiDexApplication;
 
 import com.chrisli.spotimy.injection.components.ApplicationComponent;
 import com.chrisli.spotimy.injection.components.DaggerApplicationComponent;
@@ -13,7 +13,7 @@ import io.realm.Realm;
  * Created by Chris Li on 2017-07-27.
  */
 
-public class MainApplication extends Application {
+public class MainApplication extends MultiDexApplication {
 
     private ApplicationComponent mApplicationComponent;
 
